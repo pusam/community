@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <th:block th:replace="fragment/head :: headFragment"/>
+</head>
+<body>
+<div id="body-wrapper">
+    <form>
+        <div>
+            <span>게시글번호</span><br/>
+            <input type="text" id="id" th:value="${content.id}" readonly required><br/>
+        </div>
+        <div>
+            <span>토픽</span><br/>
+            <input type="text" id="topic_id" th:value="${content.topicId}" required><br/>
+        </div>
+        <div>
+            <span>제목</span><br/>
+            <input type="text" id="title" th:value="${content.title}" required><br/>
+        </div>
+        <div>
+            <span>내용</span><br/>
+            <textarea id="text" th:value="${content.text}" th:text="${content.text}" required></textarea>
+        </div>
+        <a href="/contents/list/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-update">수정</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
+        <th:block th:replace="fragment/footer :: footerFragment" />
+    </form>
+</div>
+<script src="/js/contents.js" th:inline="javascript"></script>
+</body>
+</html>

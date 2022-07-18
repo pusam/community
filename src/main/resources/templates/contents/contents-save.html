@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8"/>
+  <th:block th:replace="fragment/head :: headFragment"/>
+</head>
+<body>
+<div id="body-wrapper">
+  <form>
+    <div>
+      <span>토픽</span><br/>
+      <input type="text" id="topic_id" required><br/>
+    </div>
+    <div>
+      <span>제목</span><br/>
+      <input type="text" id="title" required><br/>
+    </div>
+    <div>
+      <span>내용</span><br/>
+      <textarea id="text" required></textarea>
+    </div>
+    <button type="button" class="btn btn-primary" id="btn-save">등록</button>
+    <th:block th:replace="fragment/footer :: footerFragment" />
+  </form>
+</div>
+<script src="/js/contents.js" th:inline="javascript"></script>
+</body>
+</html>

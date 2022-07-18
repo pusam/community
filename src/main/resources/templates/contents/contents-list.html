@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8"/>
+  <th:block th:replace="fragment/head :: headFragment"/>
+</head>
+<body>
+<div id="body-wrapper">
+  <a href="/contents/save">글쓰기</a>
+  <th:block th:replace="fragment/footer :: footerFragment"/>
+  <br/>
+  <table class="table table-horizontal table-bordered">
+    <thead class="thead-strong">
+    <tr>
+      <th>게시글번호</th>
+      <th>토픽</th>
+      <th>제목</th>
+      <th>내용</th>
+      <th>작성자</th>
+      <th>작성일</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    <tr th:each="item : ${contents}">
+      <td th:text="${item.id}"></td>
+      <td th:text="${item.topicId}"></td>
+      <td><a th:text="${item.title}" th:href="@{'/contents/update/' + ${item.id}}">fff</a></td>
+      <td th:text="${item.text}"></td>
+      <td th:text="${item.userId}"></td>
+      <td th:text="${item.createDt}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
